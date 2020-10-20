@@ -13,10 +13,6 @@ export default class HouseController{
         _draw()
     }
 
-    // getHouse(){
-    //     houseService.getHouse()
-    // }
-
     postHouse(e){
         e.preventDefault()
         let formData = e.target
@@ -30,5 +26,27 @@ export default class HouseController{
             imgUrl: formData.imgUrl.value
         }
         houseService.postHouse(newHouse)
+    }
+
+    editHouse(e, houseId){
+        e.preventDefault()
+        let formData = e.target
+        let editedHouse = {
+            bedrooms: formData.bedrooms.value,
+            bathrooms: formData.bathrooms.value,
+            year: formData.year.value,
+            levels: formData.levels.value,
+            price: formData.price.value,
+            description: formData.description.value,
+            imgUrl: formData.imgUrl.value,
+            _id: houseId
+        }
+
+        $('editHouseModal-' + houseId).modal('toggle')
+        houseService.editHouse(editedHouse)
+    }
+
+    deleteHouse(houseId){
+        houseService.deleteHouse(houseId)
     }
 }

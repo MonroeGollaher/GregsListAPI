@@ -8,6 +8,12 @@ class HouseService {
         this.getHouse()
     }
 
+    editHouse(editedHouse){
+        api.put("houses/" + editedHouse._id, editedHouse).then(res => {
+            this.getHouse()
+        })
+    }
+
     getHouse(){
         api.get("houses").then(res => {
             ProxyState.houses = res.data.data.map(rawHouseData => new House(rawHouseData))
@@ -16,6 +22,12 @@ class HouseService {
 
     postHouse(newHouse){
         api.post("houses", newHouse).then(res => {
+            this.getHouse()
+        }).catch(err => console.error(err))
+    }
+
+    deleteHouse(houseId){
+        api.delete("cars/" + houseId).then(res => {
             this.getHouse()
         }).catch(err => console.error(err))
     }
