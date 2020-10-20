@@ -11,7 +11,7 @@ export default class Car {
 
     get Template() {
         return /*html*/`
-        <div class="col-3 border border-info shadow-lg rounded">
+        <div class="col-4 border border-info shadow-lg rounded">
             <img class="img-fluid" src="${this.imgUrl}" alt=""/>
             <h1>${this.make}</h1>
             <h3>${this.model}</h3>
