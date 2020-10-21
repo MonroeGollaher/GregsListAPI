@@ -12,7 +12,7 @@ export default class House {
 
     get Template() {
         return /*html*/`
-        <div class="col-4 border border-info shadow-lg rounded">
+        <div class="col-3 border shadow-lg rounded">
             <img class="img-fluid" src="${this.imgUrl}" alt=""/>
             <h1>${this.price}</h1>
             <p></p>${this.bedrooms}</p>

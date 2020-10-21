@@ -11,7 +11,7 @@ export default class Car {
 
     get Template() {
         return /*html*/`
-        <div class="col-4 border border-info shadow-lg rounded">
+        <div class="col-3 shadow-lg rounded">
             <img class="img-fluid" src="${this.imgUrl}" alt=""/>
             <h1>${this.make}</h1>
             <h3>${this.model}</h3>
@@ -19,9 +19,7 @@ export default class Car {
             <p>${this.year}</p>
             <p>${this.description}</p>
             <button class="btn btn-danger btn-block" onclick="app.carController.deleteCar('${this._id}')">Delort</button>
-            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#editCarModal-${this._id}">
-            Edit
-        </button>
+            <button type="button" class="btn btn-primary btn-block" data-toggle="modal" data-target="#editCarModal-${this._id}">Edit</button>
         ${this.Modal}
         </div>
         `
